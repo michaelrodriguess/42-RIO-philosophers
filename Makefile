@@ -1,7 +1,8 @@
 SRCS			=	./sources/main.c \
 					./sources/utils/ft_atoi.c \
 					./sources/checks/ft_check_isdigit.c \
-					./sources/checks/ft_check_and_init_value.c \
+					./sources/routine/ft_init_rules.c \
+					./sources/routine/ft_init_philos.c \
 					./sources/routine/ft_create_philo.c \
 					./sources/routine/ft_routine.c 
 

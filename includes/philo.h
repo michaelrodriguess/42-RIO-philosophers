@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 19:13:16 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/02 21:37:11 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/03 22:14:52 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,24 @@ typedef struct s_rules
 	int time_to_sleep;
 	int number_each_philo_eat;
 	int *forks;
-	pthread_mutex *mutex_forks;
+	pthread_mutex_t *mutex_forks;
 }	t_rules;
 
 typedef struct s_philo
 {
-	int	fork;
+	int pid;
+	int	fork_first;
+	int fork_second;
 	pthread_t *philo;
-	t_rules *rules;
+	t_rules *rule;
 }		t_philo;
 
-void	ft_check_init_value(t_data *var, int argc, char **argv);
+void	ft_init_forks(t_philo *philos, int index_philo);
 void	*ft_routine(void *);
+int		ft_create_philos(t_philo *philos);
+int		ft_init_rules(t_rules *rule, int argc, char **argv);
 int		ft_check_isdigit(int argc, char **argv);
-int		ft_create_philo(t_data *var);
 long	ft_atoi(const char *n);
+t_philo	*ft_init_philos(t_rules *rule);
 
 #endif

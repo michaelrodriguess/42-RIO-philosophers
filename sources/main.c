@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 19:08:42 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/02 21:46:27 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/03 22:13:40 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 int main(int argc, char **argv)
 {
-	t_philo philos;
+	t_philo *philos;
+	t_rules rule;
 
-	ft_check_init_value(&philos, argc, argv);
-	ft_create_philo(&philos);
+	memset(&philos, 0, sizeof(philos));
+	if(ft_init_rules(&rule, argc, argv) == 0)
+		return (0);
+	philos = ft_init_philos(&rule);
+	if(ft_create_philos(philos) == 0)
+		return (0);
+	
 }
