@@ -4,14 +4,14 @@ SRCS			=	./sources/main.c \
 					./sources/routine/ft_init_rules.c \
 					./sources/routine/ft_init_philos.c \
 					./sources/routine/ft_create_philo.c \
-					./sources/routine/ft_routine.c 
-
+					./sources/routine/ft_routine.c \
+					./sources/routine/ft_take_forks.c
 
 NAME			= philo
 OBJS			= $(SRCS:.c=.o)
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -pthread 
+CFLAGS			= -Wall -Wextra -Werror -g -pthread 
 
 
 $(NAME):	$(SRCS)

@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 20:57:41 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/03 21:59:00 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:35:52 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_philo *ft_init_philos(t_rules *rule)
 	t_philo *philos;
 	int 	index_philo;
 
-	philos		= malloc(rule->number_of_philosophers * sizeof(t_philo));
+	philos	= malloc(rule->number_of_philosophers * sizeof(t_philo));
 	index_philo	= 0;
 	while (index_philo < rule->number_of_philosophers)
 	{
@@ -44,4 +44,5 @@ void ft_init_forks(t_philo *philos, int index_philo)
 		else
 			philos->fork_second = index_philo - 1;
 	}
+	philos->rule->forks[index_philo] = 1;
 }
