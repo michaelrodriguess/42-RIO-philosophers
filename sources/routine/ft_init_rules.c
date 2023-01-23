@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:41:45 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/16 19:36:12 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:56:21 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,15 @@ int	ft_init_rules(t_rules *rule, int argc, char **argv)
 		rule->forks = malloc(rule->number_of_philosophers * sizeof(int));
 		if(!rule->forks)
 		{	
-			write(1, "error", 6);
-			write(1, "\n", 1);
 			return(0);
 		}
 		rule->mutex_forks = malloc(rule->number_of_philosophers * sizeof(pthread_mutex_t));
+		if(!rule->mutex_forks)
+		{
+			write(1, "error", 6);
+			write(1, "\n", 1);
+			return (0);
+		}
 		return(1);
 	}
 	else

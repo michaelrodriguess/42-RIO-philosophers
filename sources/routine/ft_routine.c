@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 11:55:50 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/16 19:37:08 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:32:15 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,14 @@ void *ft_routine(void *philo)
 	{
 		ft_take_fork(p, p->fork_first);
 		ft_take_fork(p, p->fork_second);
-		printf("%d\tIs eating\n", p->pid);
-		usleep(50000);
-
+		printf("%ld\t%d\tIs eating\n",ft_current_time(p), p->pid);
+		usleep(p->rule->time_to_eat * 1000);
+		give_back_forks(p);
+		printf("%ld\t%d\tIs sleeping\n",ft_current_time(p), p->pid);
+		usleep(p->rule->time_to_sleep * 1000);
+		printf("%ld\t%d\tIs thinking\n",ft_current_time(p), p->pid);
+		
 	}
-	printf("HERE SHOULD CONTAIN THESE VALUES BELOW\nphilo sleep? philo die\n");
 	return (NULL);
 }
 
