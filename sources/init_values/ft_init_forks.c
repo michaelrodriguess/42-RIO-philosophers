@@ -1,33 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_philos.c                                   :+:      :+:    :+:   */
+/*   ft_init_forks.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 20:57:41 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/16 19:35:52 by microdri         ###   ########.fr       */
+/*   Created: 2023/01/24 14:07:54 by microdri          #+#    #+#             */
+/*   Updated: 2023/01/24 14:09:23 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
-
-t_philo *ft_init_philos(t_rules *rule)
-{
-	t_philo *philos;
-	int 	index_philo;
-
-	philos	= malloc(rule->number_of_philosophers * sizeof(t_philo));
-	index_philo	= 0;
-	while (index_philo < rule->number_of_philosophers)
-	{
-		philos[index_philo].pid = index_philo + 1;
-		philos[index_philo].rule = rule;	// todos filosofes vao apontar para a mesma struct!
-		ft_init_forks(&philos[index_philo], index_philo);
-		index_philo++;
-	}
-	return (philos);
-}
 
 void ft_init_forks(t_philo *philos, int index_philo)
 {

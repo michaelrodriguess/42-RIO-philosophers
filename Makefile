@@ -1,8 +1,10 @@
 SRCS			=	./sources/main.c \
+					./sources/init_values/ft_init_rules.c \
+					./sources/init_values/ft_init_philos.c \
+					./sources/init_values/ft_init_mutex.c \
+					./sources/init_values/ft_init_forks.c \
 					./sources/utils/ft_atoi.c \
 					./sources/checks/ft_check_isdigit.c \
-					./sources/routine/ft_init_rules.c \
-					./sources/routine/ft_init_philos.c \
 					./sources/routine/ft_create_philo.c \
 					./sources/routine/ft_routine.c \
 					./sources/routine/ft_take_forks.c \

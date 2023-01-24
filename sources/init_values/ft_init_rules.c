@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 21:41:45 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/23 14:56:21 by microdri         ###   ########.fr       */
+/*   Created: 2023/01/24 14:12:15 by microdri          #+#    #+#             */
+/*   Updated: 2023/01/24 14:12:40 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_init_rules(t_rules *rule, int argc, char **argv)
 			rule->number_each_philo_eat = ft_atoi(argv[5]);
 		rule->forks = malloc(rule->number_of_philosophers * sizeof(int));
 		if(!rule->forks)
-		{	
+		{
 			return(0);
 		}
 		rule->mutex_forks = malloc(rule->number_of_philosophers * sizeof(pthread_mutex_t));
@@ -42,16 +42,3 @@ int	ft_init_rules(t_rules *rule, int argc, char **argv)
 	else
 		return (0);
 }
-
-void ft_init_mutex(t_rules *rule)
-{
-	int i;
-
-	i = 0;
-	while(i < rule->number_of_philosophers)
-	{
-		pthread_mutex_init(&rule->mutex_forks[i], NULL);
-		i++;
-	}
-}
-
