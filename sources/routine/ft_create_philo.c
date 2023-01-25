@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 11:44:48 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/23 18:16:21 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/24 22:14:58 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int ft_create_philos(t_philo *philos)
 		}
 		i++;
 	}
+	ft_monitoring_isdead(philos);
 	i = 0;
 	while (i < philos->rule->number_of_philosophers)
 	{
@@ -39,5 +40,4 @@ int ft_create_philos(t_philo *philos)
 	}
 	return (0);
 }
-
 

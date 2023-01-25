@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_monitoring_isdead.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/30 19:08:42 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/24 22:02:18 by microdri         ###   ########.fr       */
+/*   Created: 2023/01/24 21:58:09 by microdri          #+#    #+#             */
+/*   Updated: 2023/01/24 22:44:47 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/philo.h" 
+#include "../../includes/philo.h"
 
-int main(int argc, char **argv)
+void ft_monitoring_isdead(t_philo *philos)
 {
-	t_philo *philos;
-	t_rules rule;
+	int i;
 
-	if(ft_init_rules(&rule, argc, argv) == 0)
-		return (0);
-	philos = ft_init_philos(&rule);
-	if(ft_create_philos(philos) == 0)
-		return (0);
-	
+	while (philos->rule->flag_someone_die == 1)
+	{
+		i = 0;
+		philos->time_of_last_meal = ft_get_time();
+		while(i < philos->rule->number_of_philosophers)
+		{
+			if(philos[i].time_of_last_meal > philos->rule->time_to_die)
+			{
+				philos->rule->flag_someone_die = 0;
+				break ;
+			}
+			i++;
+		}
+	}
 }
+

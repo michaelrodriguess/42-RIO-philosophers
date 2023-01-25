@@ -8,7 +8,8 @@ SRCS			=	./sources/main.c \
 					./sources/routine/ft_create_philo.c \
 					./sources/routine/ft_routine.c \
 					./sources/routine/ft_take_forks.c \
-					./sources/routine/ft_get_time.c
+					./sources/routine/ft_get_time.c	\
+					./sources/routine/ft_monitoring_isdead.c 
 
 NAME			= philo
 OBJS			= $(SRCS:.c=.o)
