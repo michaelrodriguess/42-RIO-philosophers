@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 19:13:16 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/25 15:11:57 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/25 17:01:07 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int			ft_create_philos(t_philo *philos);
 int			ft_init_rules(t_rules *rule, int argc, char **argv);
 int			ft_check_isdigit(int argc, char **argv);
 long		ft_atoi(const char *n);
-long int	ft_current_time(t_philo *philos);
+long int	ft_time_formated(t_philo *philos);
 long int	ft_get_time(void);
 t_philo		*ft_init_philos(t_rules *rule);
 
