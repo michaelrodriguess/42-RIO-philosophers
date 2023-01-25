@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 19:13:16 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/24 22:32:57 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:11:57 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,12 @@ typedef struct s_philo
 
 void		ft_monitoring_isdead(t_philo *philos);
 void		ft_init_mutex(t_rules *rule);
+void		ft_destroy_mutex(t_rules *rule);
 void		ft_init_forks(t_philo *philos, int index_philo);
 void		ft_take_fork(t_philo *philos, int which_fork);
 void		*ft_routine(void *philo);
+void		ft_drop_forks(t_philo *philos);
+void		ft_smart_sleep(int time);
 int			ft_create_philos(t_philo *philos);
 int			ft_init_rules(t_rules *rule, int argc, char **argv);
 int			ft_check_isdigit(int argc, char **argv);

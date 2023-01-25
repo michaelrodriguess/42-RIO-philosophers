@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:11:42 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/24 14:12:07 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:12:43 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,16 @@ void ft_init_mutex(t_rules *rule)
 		i++;
 	}
 }
+
+void ft_destroy_mutex(t_rules *rule)
+{
+	int i;
+
+	i = 0;
+	while(i < rule->number_of_philosophers)
+	{
+		pthread_mutex_destroy(&rule->mutex_forks[i]);
+		i++;
+	}
+}
+

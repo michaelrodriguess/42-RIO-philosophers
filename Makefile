@@ -4,12 +4,14 @@ SRCS			=	./sources/main.c \
 					./sources/init_values/ft_init_mutex.c \
 					./sources/init_values/ft_init_forks.c \
 					./sources/utils/ft_atoi.c \
+					./sources/utils/ft_get_time.c	\
+					./sources/utils/ft_smart_sleep.c	\
+					./sources/utils/ft_monitoring_isdead.c \
+					./sources/utils/ft_create_philo.c \
 					./sources/checks/ft_check_isdigit.c \
-					./sources/routine/ft_create_philo.c \
 					./sources/routine/ft_routine.c \
 					./sources/routine/ft_take_forks.c \
-					./sources/routine/ft_get_time.c	\
-					./sources/routine/ft_monitoring_isdead.c 
+					./sources/routine/ft_drop_forks.c 
 
 NAME			= philo
 OBJS			= $(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:09:29 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/24 14:10:15 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:51:19 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_philo *ft_init_philos(t_rules *rule)
 	while (index_philo < rule->number_of_philosophers)
 	{
 		philos[index_philo].pid = index_philo + 1;
-		philos[index_philo].rule = rule;	// todos filosofes vao apontar para a mesma struct!
+		philos[index_philo].rule = rule;
 		ft_init_forks(&philos[index_philo], index_philo);
 		index_philo++;
 	}
