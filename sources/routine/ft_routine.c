@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 11:55:50 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/26 17:48:15 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/27 18:47:45 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void *ft_routine(void *philo)
 	t_philo *p;
 
 	p = philo;
-	while (p->rule->flag_someone_die == 1 && p->times_that_eat < p->rule->number_each_philo_eat)
+	while (p->rule->flag_someone_die == 1 && ft_check_isfull(p) == 1)
 	{
 		ft_take_fork(p, p->fork_first);
 		ft_take_fork(p, p->fork_second);

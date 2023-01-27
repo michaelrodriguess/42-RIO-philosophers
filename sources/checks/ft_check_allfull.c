@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_monitoring_isdead.c                             :+:      :+:    :+:   */
+/*   ft_check_allfull.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 21:58:09 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/27 18:46:15 by microdri         ###   ########.fr       */
+/*   Created: 2023/01/27 18:40:02 by microdri          #+#    #+#             */
+/*   Updated: 2023/01/27 18:51:58 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
 
-void ft_monitoring_isdead(t_philo *philos)
+int	ft_check_allfull(t_philo *philos)
 {
 	int i;
 
-	while (philos->rule->flag_someone_die == 1)
+	i = 0;
+	while (i < philos->rule->number_of_philosophers)
 	{
-		if (ft_check_allfull(philos) == 0)
-			return ;
-		i = 0;
-		while(i < philos->rule->number_of_philosophers)
-		{
-			if((ft_time_formated(&philos[i]) - philos[i].time_of_last_meal) > philos->rule->time_to_die)
-			{
-				philos->rule->flag_someone_die = 0;
-				printf("%ld\t%d\tdied\n", ft_time_formated(philos), philos[i].pid);
-				break ;
-			}
-			i++;
-		}
+		if (ft_check_isfull(philos) == 1)
+			return (1);
+		i++;
 	}
+	return (0);
 }

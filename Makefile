@@ -10,6 +10,8 @@ SRCS			=	./sources/main.c \
 					./sources/utils/ft_monitoring_isdead.c \
 					./sources/utils/ft_free_trash.c \
 					./sources/checks/ft_check_isdigit.c \
+					./sources/checks/ft_check_isfull.c \
+					./sources/checks/ft_check_allfull.c \
 					./sources/routine/ft_routine.c \
 					./sources/routine/ft_take_forks.c \
 					./sources/routine/ft_drop_forks.c 
