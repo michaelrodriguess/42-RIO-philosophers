@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:12:15 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/27 17:24:27 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/29 18:49:10 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	ft_init_rules(t_rules *rule, int argc, char **argv)
 	{
 		free(rule->mutex_forks);
 		return (0);
-	}
-	ft_init_mutex(rule);
+	}	
 	return(1);
 }

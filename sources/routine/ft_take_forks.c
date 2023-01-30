@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:07:02 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/25 17:00:14 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/29 19:37:58 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_take_fork(t_philo *philos, int which_fork)
 {
-	while(philos->rule->flag_someone_die == 1)
+	while(ft_check_die(philos) == 1)
 	{
 		pthread_mutex_lock(&philos->rule->mutex_forks[which_fork]);
 		if(philos->rule->forks[which_fork] == 1)

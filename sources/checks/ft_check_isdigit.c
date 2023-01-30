@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 17:29:04 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/26 11:58:06 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/27 21:34:06 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int ft_check_isdigit(int argc, char **argv )
 		num = ft_atoi(argv[i]);
 		if (num < 0 || num > 2147483647)
 		{
-			write(2, "Error: Overflow integer", 25);
+			write(2, "Error: Overflow integer", 24);
 			return (0);
 		}
 		if (ft_has_digit(argv[i]) == 0)

@@ -6,12 +6,13 @@ SRCS			=	./sources/main.c \
 					./sources/utils/ft_atoi.c \
 					./sources/utils/ft_get_time.c	\
 					./sources/utils/ft_smart_sleep.c	\
-					./sources/utils/ft_create_philo.c \
-					./sources/utils/ft_monitoring_isdead.c \
 					./sources/utils/ft_free_trash.c \
 					./sources/checks/ft_check_isdigit.c \
 					./sources/checks/ft_check_isfull.c \
 					./sources/checks/ft_check_allfull.c \
+					./sources/checks/ft_check_die.c \
+					./sources/routine/ft_create_philo.c \
+					./sources/routine/ft_monitoring_isdead.c \
 					./sources/routine/ft_routine.c \
 					./sources/routine/ft_take_forks.c \
 					./sources/routine/ft_drop_forks.c 

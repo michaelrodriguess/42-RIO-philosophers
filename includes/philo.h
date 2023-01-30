@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 19:13:16 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/27 18:55:29 by microdri         ###   ########.fr       */
+/*   Updated: 2023/01/29 19:00:13 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ typedef struct s_rules
 	int 			*forks;
 	int				flag_someone_die;
 	long int		time_update;
-	pthread_mutex_t *mutex_forks;
+	pthread_mutex_t	m_flag_someone_die;
+	pthread_mutex_t *mutex_forks; //mutex ok.
 }	t_rules;
 
 typedef struct s_philo
@@ -40,19 +41,22 @@ typedef struct s_philo
 	int					fork_second;
 	int					times_that_eat;
 	long int			time_of_last_meal;
+	pthread_mutex_t		m_time_of_last_meal;
+	pthread_mutex_t		m_times_that_eat; //mutex ok.
 	pthread_t 			philo;
 	t_rules				*rule;
 }		t_philo;
 
 void		ft_monitoring_isdead(t_philo *philos);
-void		ft_init_mutex(t_rules *rule);
-void		ft_destroy_mutex(t_rules *rule);
+void		ft_init_mutex(t_rules *rule, t_philo *philos);
+void		ft_destroy_mutex(t_rules *rule, t_philo *philos);
 void		ft_init_forks(t_philo *philos, int index_philo);
 void		ft_take_fork(t_philo *philos, int which_fork);
 void		*ft_routine(void *philo);
 void		ft_drop_forks(t_philo *philos);
 void		ft_smart_sleep(int time);
 void		ft_free_trash(t_philo **philos);
+int			ft_check_die(t_philo *philos);
 int			ft_check_allfull(t_philo *philos);
 int			ft_check_isfull(t_philo *p);
 int			ft_create_philos(t_philo *philos);
