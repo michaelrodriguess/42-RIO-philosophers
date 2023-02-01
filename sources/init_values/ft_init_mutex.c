@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:11:42 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/29 17:50:44 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/01 18:23:29 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void ft_init_mutex(t_rules *rule, t_philo *philos)
 		pthread_mutex_init(&philos[i].m_times_that_eat, NULL);
 		pthread_mutex_init(&rule->m_flag_someone_die, NULL);
 		pthread_mutex_init(&philos[i].m_time_of_last_meal, NULL);
+		pthread_mutex_init(&rule->m_printf, NULL);
 		i++;
 	}
 }
@@ -38,6 +39,7 @@ void ft_destroy_mutex(t_rules *rule, t_philo *philos)
 		pthread_mutex_destroy(&philos[i].m_times_that_eat);
 		pthread_mutex_destroy(&rule->m_flag_someone_die);
 		pthread_mutex_destroy(&philos[i].m_time_of_last_meal);
+		pthread_mutex_destroy(&rule->m_printf);
 		i++;
 	}
 }

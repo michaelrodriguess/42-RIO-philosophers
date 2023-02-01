@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 19:13:16 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/29 19:00:13 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/01 18:44:01 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ typedef struct s_rules
 	int 			*forks;
 	int				flag_someone_die;
 	long int		time_update;
-	pthread_mutex_t	m_flag_someone_die;
-	pthread_mutex_t *mutex_forks; //mutex ok.
+	pthread_mutex_t	m_printf; 			//
+	pthread_mutex_t	m_flag_someone_die;	//mutex ok.
+	pthread_mutex_t *mutex_forks; 		//mutex ok.
 }	t_rules;
 
 typedef struct s_philo
@@ -41,8 +42,8 @@ typedef struct s_philo
 	int					fork_second;
 	int					times_that_eat;
 	long int			time_of_last_meal;
-	pthread_mutex_t		m_time_of_last_meal;
-	pthread_mutex_t		m_times_that_eat; //mutex ok.
+	pthread_mutex_t		m_time_of_last_meal;	//mutex ok.
+	pthread_mutex_t		m_times_that_eat;		//mutex ok.
 	pthread_t 			philo;
 	t_rules				*rule;
 }		t_philo;
