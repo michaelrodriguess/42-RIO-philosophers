@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_allfull.c                                 :+:      :+:    :+:   */
+/*   ft_print_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 18:40:02 by microdri          #+#    #+#             */
-/*   Updated: 2023/02/03 17:25:54 by microdri         ###   ########.fr       */
+/*   Created: 2023/02/03 18:06:38 by microdri          #+#    #+#             */
+/*   Updated: 2023/02/03 18:41:14 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
 
-int	ft_check_allfull(t_philo *philos)
+int	ft_print_error(void)
 {
-	int	i;
-
-	i = 0;
-	while (i < philos->rule->number_of_philosophers)
-	{
-		if (ft_check_isfull(philos) == 1)
-			return (1);
-		i++;
-	}
+	write(2, "Error\n", 6);
 	return (0);
 }

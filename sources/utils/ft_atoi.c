@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 12:31:12 by microdri          #+#    #+#             */
-/*   Updated: 2022/12/31 17:59:37 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/03 18:39:07 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ long	ft_atoi(const char *n)
 		if (n[i] == '-')
 			signal = -1;
 		i++;
-	}			
-	while (n[i] >= '0' && n[i] <= '9') 
+	}
+	while (n[i] >= '0' && n[i] <= '9')
 	{	
 		result_value = result_value * 10 + n[i] - '0';
 		i++;

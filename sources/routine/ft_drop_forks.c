@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:54:38 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/25 12:01:20 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/03 18:48:53 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	ft_drop_forks(t_philo *philos)
 {
 	pthread_mutex_lock(&philos->rule->mutex_forks[philos->fork_first]);
-	if(philos->rule->forks[philos->fork_first] == 0)
+	if (philos->rule->forks[philos->fork_first] == 0)
 		philos->rule->forks[philos->fork_first] = 1;
 	pthread_mutex_unlock(&philos->rule->mutex_forks[philos->fork_first]);
 	pthread_mutex_lock(&philos->rule->mutex_forks[philos->fork_second]);
-	if(philos->rule->forks[philos->fork_second] == 0)
+	if (philos->rule->forks[philos->fork_second] == 0)
 		philos->rule->forks[philos->fork_second] = 1;
 	pthread_mutex_unlock(&philos->rule->mutex_forks[philos->fork_second]);
 }

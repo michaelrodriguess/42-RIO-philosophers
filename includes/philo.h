@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 19:13:16 by microdri          #+#    #+#             */
-/*   Updated: 2023/02/02 22:27:05 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/03 20:10:00 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,29 @@
 
 typedef struct s_rules
 {
-	int 			number_of_philosophers;
-	int 			time_to_die;
-	int 			time_to_eat;
-	int 			time_to_sleep;
-	int 			number_each_philo_eat;
-	int 			*forks;
+	int				number_of_philosophers;
+	int				time_to_die;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				number_each_philo_eat;
+	int				*forks;
 	int				flag_someone_die;
 	long int		time_update;
-	pthread_mutex_t	m_printf; 			//mutex less for thinking
-	pthread_mutex_t	m_flag_someone_die;	//mutex ok.
-	pthread_mutex_t *mutex_forks; 		//mutex ok.
+	pthread_mutex_t	m_printf;
+	pthread_mutex_t	m_flag_someone_die;
+	pthread_mutex_t	*mutex_forks;
 }	t_rules;
 
 typedef struct s_philo
 {
-	int	 				pid;
+	int					pid;
 	int					fork_first;
 	int					fork_second;
 	int					times_that_eat;
 	long int			time_of_last_meal;
-	pthread_mutex_t		m_time_of_last_meal;	//mutex ok.
-	pthread_mutex_t		m_times_that_eat;		//mutex ok.
-	pthread_t 			philo;
+	pthread_mutex_t		m_time_of_last_meal;
+	pthread_mutex_t		m_times_that_eat;
+	pthread_t			philo;
 	t_rules				*rule;
 }		t_philo;
 
@@ -58,6 +58,7 @@ void		ft_drop_forks(t_philo *philos);
 void		ft_smart_sleep(int time);
 void		ft_free_trash(t_philo **philos);
 void		ft_check_printf(char c, t_philo *philos);
+int			ft_print_error(void);
 int			ft_check_die(t_philo *philos);
 int			ft_check_allfull(t_philo *philos);
 int			ft_check_isfull(t_philo *p);

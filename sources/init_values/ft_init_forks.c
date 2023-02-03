@@ -6,13 +6,13 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:07:54 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/24 14:09:23 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/03 18:01:41 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
 
-void ft_init_forks(t_philo *philos, int index_philo)
+void	ft_init_forks(t_philo *philos, int index_philo)
 {
 	if (philos->pid % 2 == 0)
 	{

@@ -6,24 +6,24 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:09:29 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/27 18:23:41 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/03 18:03:58 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
 
-t_philo *ft_init_philos(t_rules *rule)
+t_philo	*ft_init_philos(t_rules *rule)
 {
-	t_philo *philos;
-	int 	index_philo;
+	t_philo	*philos;
+	int		index_philo;
 
-	philos	= malloc(rule->number_of_philosophers * sizeof(t_philo));
+	philos = malloc(rule->number_of_philosophers * sizeof(t_philo));
 	if (!philos)
 	{
 		free(philos);
 		return (0);
 	}
-	index_philo	= 0;
+	index_philo = 0;
 	while (index_philo < rule->number_of_philosophers)
 	{
 		philos[index_philo].pid = index_philo + 1;

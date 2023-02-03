@@ -6,15 +6,15 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:07:47 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/26 11:32:59 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/03 18:39:41 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
 
-void ft_free_trash(t_philo **philos)
+void	ft_free_trash(t_philo **philos)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < (*philos)->rule->number_of_philosophers)
@@ -24,6 +24,4 @@ void ft_free_trash(t_philo **philos)
 		free(philos);
 		i++;
 	}
-
 }
-

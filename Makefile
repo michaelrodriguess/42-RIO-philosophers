@@ -4,6 +4,7 @@ SRCS			=	./sources/main.c \
 					./sources/init_values/ft_init_mutex.c \
 					./sources/init_values/ft_init_forks.c \
 					./sources/utils/ft_atoi.c \
+					./sources/utils/ft_print_error.c \
 					./sources/utils/ft_get_time.c	\
 					./sources/utils/ft_smart_sleep.c	\
 					./sources/utils/ft_free_trash.c \
