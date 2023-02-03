@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 19:13:16 by microdri          #+#    #+#             */
-/*   Updated: 2023/02/01 18:44:01 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/02 22:27:05 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_rules
 	int 			*forks;
 	int				flag_someone_die;
 	long int		time_update;
-	pthread_mutex_t	m_printf; 			//
+	pthread_mutex_t	m_printf; 			//mutex less for thinking
 	pthread_mutex_t	m_flag_someone_die;	//mutex ok.
 	pthread_mutex_t *mutex_forks; 		//mutex ok.
 }	t_rules;
@@ -57,6 +57,7 @@ void		*ft_routine(void *philo);
 void		ft_drop_forks(t_philo *philos);
 void		ft_smart_sleep(int time);
 void		ft_free_trash(t_philo **philos);
+void		ft_check_printf(char c, t_philo *philos);
 int			ft_check_die(t_philo *philos);
 int			ft_check_allfull(t_philo *philos);
 int			ft_check_isfull(t_philo *p);

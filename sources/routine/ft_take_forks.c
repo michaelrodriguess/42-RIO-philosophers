@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:07:02 by microdri          #+#    #+#             */
-/*   Updated: 2023/01/29 19:37:58 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/02 22:25:06 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void ft_take_fork(t_philo *philos, int which_fork)
 		if(philos->rule->forks[which_fork] == 1)
 		{
 			philos->rule->forks[which_fork] = 0;
-			printf("%ld\t%d\t%s\n", ft_time_formated(philos), philos->pid, "Has taken a fork");
+//			printf("%ld\t%d\t%s\n", ft_time_formated(philos), philos->pid, "Has taken a fork");
+			ft_check_printf('f', philos);
 			pthread_mutex_unlock(&philos->rule->mutex_forks[which_fork]);
 			break ;
 		}

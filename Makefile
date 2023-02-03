@@ -11,6 +11,7 @@ SRCS			=	./sources/main.c \
 					./sources/checks/ft_check_isfull.c \
 					./sources/checks/ft_check_allfull.c \
 					./sources/checks/ft_check_die.c \
+					./sources/checks/ft_check_printf.c \
 					./sources/routine/ft_create_philo.c \
 					./sources/routine/ft_monitoring_isdead.c \
 					./sources/routine/ft_routine.c \

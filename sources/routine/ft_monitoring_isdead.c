@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:58:09 by microdri          #+#    #+#             */
-/*   Updated: 2023/02/01 18:20:10 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/02 22:08:22 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void ft_monitoring_isdead(t_philo *philos)
 				pthread_mutex_lock(&philos->rule->m_flag_someone_die);
 				philos->rule->flag_someone_die = 0;
 				pthread_mutex_unlock(&philos->rule->m_flag_someone_die);
-				printf("%ld\t%d\tdied\n", ft_time_formated(philos), philos[i].pid);
+				ft_check_printf('d', &philos[i]);
+			//	printf("%ld\t%d\tdied\n", ft_time_formated(philos), philos[i].pid);
 				pthread_mutex_unlock(&philos[i].m_time_of_last_meal);
 				break ;
 			}
