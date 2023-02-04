@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:07:02 by microdri          #+#    #+#             */
-/*   Updated: 2023/02/03 19:11:29 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/04 13:42:24 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_take_fork(t_philo *philos, int which_fork)
 		else
 		{
 			pthread_mutex_unlock(&philos->rule->mutex_forks[which_fork]);
-			usleep(300);
+			usleep(200);
 		}
 	}
 }

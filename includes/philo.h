@@ -6,7 +6,7 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 19:13:16 by microdri          #+#    #+#             */
-/*   Updated: 2023/02/03 20:10:00 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/04 15:14:56 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		ft_init_forks(t_philo *philos, int index_philo);
 void		ft_take_fork(t_philo *philos, int which_fork);
 void		*ft_routine(void *philo);
 void		ft_drop_forks(t_philo *philos);
-void		ft_smart_sleep(int time);
+void		ft_smart_sleep(int time, t_philo *philos);
 void		ft_free_trash(t_philo **philos);
 void		ft_check_printf(char c, t_philo *philos);
 int			ft_print_error(void);
